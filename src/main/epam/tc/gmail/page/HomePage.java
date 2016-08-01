@@ -1,5 +1,7 @@
 package main.epam.tc.gmail.page;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -35,23 +37,9 @@ public class HomePage {
 	@FindBy(xpath = "//a[contains(text(), 'Входящие')]")
 	private WebElement incomingMessages;
 	
-	@FindBy(xpath = "//div[contains(@aria-label, 'Выбрать')]/div/span/div")
-	private WebElement choose;
-	
-	@FindBy(xpath = "//div[@role='menuitem' and @selector='unread']")
-	private WebElement unread;
-	
-	@FindBy(xpath = "//div[@aria-label='В спам!']")
-	private WebElement goToSpam;
-	
 	@FindBy(xpath = "//div[@aria-label='Тело письма']")
 	private WebElement bodyOfMessage;
 	
-	@FindBy(xpath = "//a[contains(text(), 'Спам')]")
-	private WebElement spamFolderButton;
-	
-	@FindBy(xpath = "//span[contains(text(), 'Ещё')]")
-	private WebElement more;
 	
 	public HomePage(WebDriver driver){
 		this.driver = driver;
@@ -81,29 +69,6 @@ public class HomePage {
 		buttonU.click();
 		quitButton.click();
 		LOG.info("Clicking quit");
-		
-		return this;
-	}
-	
-	public HomePage markAsSpam(){
-		
-		wait(choose);
-		choose.click();
-		LOG.info("Clicking choose messages");
-		
-		wait(goToSpam);
-		goToSpam.click();
-		LOG.info("Clicking go to spam!");
-		
-		return this;
-	}
-	
-	public HomePage goToFolderSpam(){
-		wait(more);
-		more.click();
-		
-		wait(spamFolderButton);
-		spamFolderButton.click();
 		
 		return this;
 	}
