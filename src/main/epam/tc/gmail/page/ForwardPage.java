@@ -11,10 +11,10 @@ public class ForwardPage extends Page{
 	
 	private final static Logger LOG = LogManager.getRootLogger();
 	
-	@FindBy(xpath = "//div[@aria-label='Настройки' and @data-tooltip='Настройки']")
+	@FindBy(xpath = "//div[@aria-label='Settings' and @data-tooltip='Settings']")
 	private WebElement settingsButton;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Настройки')]")
+	@FindBy(xpath = "//div[contains(text(), 'Settings')]")
 	private WebElement chooseSettingsButton;
 	
 	@FindBy(xpath = "//a[contains(text(), POP/IMAP)]")

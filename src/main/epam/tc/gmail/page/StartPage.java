@@ -25,10 +25,10 @@ public class StartPage extends Page{
 	@FindBy(id = "signIn")
 	private WebElement signInButton;
 	
-	@FindBy(xpath = "//a[contains(text(), 'Войти в другой аккаунт')]")
+	@FindBy(xpath = "//a[contains(text(), 'Sign in with a different account')]")
 	private List<WebElement> anotherAccountButton;
 	
-	@FindBy(xpath = "//a[contains(text(), 'Добавить аккаунт')]")
+	@FindBy(xpath = "//a[contains(text(), 'Add account')]")
 	private List<WebElement> addAccountButton;
 	
 	public StartPage(WebDriver driver){
