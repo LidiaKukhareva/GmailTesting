@@ -36,6 +36,13 @@ public class StartPage extends Page{
 		PageFactory.initElements(driver, this);
 	}
 
+	/**
+	 * Quite interesting method, never the less i believe that it works
+	 * @param user
+	 * @param passwd
+     * @return
+     */
+
 	
 	public StartPage login(String user, String passwd){
 		

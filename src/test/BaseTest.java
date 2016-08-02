@@ -13,7 +13,10 @@ public class BaseTest {
 	protected WebDriver driver;
 	
 	protected AccountDataProvider bundle = AccountDataProvider.getInstance();;
-	
+	/**
+	 * final variables should be defined in UPPER CASE
+	 */
+
 	protected final String user1 = bundle.getValue(AccountAttribute.USER1);
 	protected final String user2 = bundle.getValue(AccountAttribute.USER2);
 	protected final String passwd1 = bundle.getValue(AccountAttribute.PASSWD1);

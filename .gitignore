@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/compiler.xml
+.idea/copyright/
+.idea/libraries/Maven__com_beust_jcommander_1_48.xml
+.idea/libraries/Maven__org_testng_testng_6_9_4.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+GmailTesting.iml

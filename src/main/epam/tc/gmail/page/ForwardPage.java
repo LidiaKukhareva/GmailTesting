@@ -16,7 +16,9 @@ public class ForwardPage extends Page{
 	
 	@FindBy(xpath = "//div[contains(text(), 'Settings')]")
 	private WebElement chooseSettingsButton;
-	
+	/**
+	 * variable name starts with upper case letter
+	 */
 	@FindBy(xpath = "//a[contains(text(), POP/IMAP)]")
 	private WebElement ForwardingPOPIMap;
 	
@@ -24,6 +26,10 @@ public class ForwardPage extends Page{
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
+
+	/**
+	 * @param user is never user delete it or use in some case
+     */
 	
 	public ForwardPage setForward(String user){
 		wait(settingsButton);

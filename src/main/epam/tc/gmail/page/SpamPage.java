@@ -13,17 +13,21 @@ import org.openqa.selenium.support.PageFactory;
 public class SpamPage extends Page{
 	
 	private final static Logger LOG = LogManager.getRootLogger();
+
+	/**
+	 * Get rid of russian language in locators
+	 */
 	
-	@FindBy(xpath = "//a[contains(text(), 'Спам')]")
+	@FindBy(xpath = "//a[contains(text(), '????')]")
 	private WebElement spamFolderButton;
 	
-	@FindBy(xpath = "//span[contains(text(), 'Ещё')]")
+	@FindBy(xpath = "//span[contains(text(), '???')]")
 	private WebElement more;
 	
-	@FindBy(xpath = "//div[contains(@aria-label, 'Выбрать')]/div/span/div")
+	@FindBy(xpath = "//div[contains(@aria-label, '???????')]/div/span/div")
 	private WebElement choose;
 	
-	@FindBy(xpath = "//div[@aria-label='В спам!']")
+	@FindBy(xpath = "//div[@aria-label='? ????!']")
 	private WebElement goToSpam;
 	
 	public SpamPage(WebDriver driver){
@@ -42,6 +46,13 @@ public class SpamPage extends Page{
 			
 		return this;
 	}
+
+	/**
+	 * Awful.
+	 * Delete Thread.sleep and use WebDriverWait
+	 * @param whatMessage
+	 * @return
+     */
 		
 	public boolean isInSpam(String whatMessage){
 		String path = "//span[contains(text(), '" + whatMessage + "')]";

@@ -1,8 +1,9 @@
 package test;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import junit.framework.Assert;
+
 import main.epam.tc.gmail.page.HomePage;
 import main.epam.tc.gmail.page.SpamPage;
 import main.epam.tc.gmail.page.StartPage;

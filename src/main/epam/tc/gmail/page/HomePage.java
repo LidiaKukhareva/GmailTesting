@@ -40,31 +40,37 @@ public class HomePage extends Page{
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
-	
+
+	/**
+	 * Delete empty spaces in method please
+	 * @param user
+	 * @param body
+     * @return
+     */
 	
 	public HomePage sendMessage(String user, String body){
-		
+
 		wait(writeMessageButton);
 		writeMessageButton.click();
 		LOG.info("Clicking write message");
-		
+
 		wait(addressee);
 		addressee.sendKeys(user);
 		messageTheme.sendKeys("WWWebdriver try");
 		bodyOfMessage.sendKeys(body);
 		sendButtom.click();
 		LOG.info("Clicking send");
-		
+
 		return this;
 	}
 	
 	public HomePage quit(){
-		
+
 		wait(buttonU);
 		buttonU.click();
 		quitButton.click();
 		LOG.info("Clicking quit");
-		
+
 		return this;
 	}
 	
