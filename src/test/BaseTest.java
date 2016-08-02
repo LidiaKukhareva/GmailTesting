@@ -19,6 +19,8 @@ public class BaseTest {
 	protected final String user2 = bundle.getValue(AccountAttribute.USER2);
 	protected final String passwd1 = bundle.getValue(AccountAttribute.PASSWD1);
 	protected final String passwd2 = bundle.getValue(AccountAttribute.PASSWD2);
+	protected final String body1 = bundle.getValue(AccountAttribute.BODY1);
+	protected final String body2 = bundle.getValue(AccountAttribute.BODY2);
 	
   @BeforeClass
   public void atFirst() {

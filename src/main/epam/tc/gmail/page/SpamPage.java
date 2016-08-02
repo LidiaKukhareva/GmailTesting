@@ -47,9 +47,14 @@ public class SpamPage {
 		return this;
 	}
 		
-	public boolean isInSpam(String email){
-		String path = "//span[@email='" + email + "']";
-		wait(driver.findElement(By.xpath(path)));
+	public boolean isInSpam(String whatMessage){
+		String path = "//span[contains(text(), '" + whatMessage + "')]";
+		try{
+			Thread.sleep(5000);
+		}
+		catch(IllegalArgumentException | InterruptedException e){
+			LOG.info("Some problems with the thread");
+		}
 		List<WebElement> list = driver.findElements(By.xpath(path));
 		if (list.size() != 0){
 			return true;
@@ -64,6 +69,7 @@ public class SpamPage {
 			
 		wait(spamFolderButton);
 		spamFolderButton.click();
+		LOG.info("Clicking spam folder");
 			
 		return this;
 	}

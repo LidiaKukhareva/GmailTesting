@@ -1,6 +1,5 @@
 package test;
 
-import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 
 import junit.framework.Assert;
@@ -13,24 +12,24 @@ public class GmailTest extends BaseTest{
   @Test
   public void spam() {
 	  StartPage startPage = new StartPage(driver);
-	  //startPage.login(user1, passwd1);
+	  startPage.login(user1, passwd1);
 	  
 	  HomePage homePage = new HomePage(driver);
-	  //homePage.sendMessage(user2);
-	  //homePage.quit();
+	  homePage.sendMessage(user2, body1);
+	  homePage.quit();
 	  
-	  //startPage.login(user2, passwd2);
+	  startPage.login(user2, passwd2);
 	  SpamPage spamPage = new SpamPage(driver);
-	  /*spamPage.markAsSpam();
+	  spamPage.markAsSpam();
 	  homePage.quit();
 	  
 	  startPage.login(user1, passwd1);
-	  homePage.sendMessage(user2);
-	  homePage.quit();*/
+	  homePage.sendMessage(user2, body2);
+	  homePage.quit();
 	  
 	  startPage.login(user2, passwd2);
 	  spamPage.goToFolderSpam();
-	  Assert.assertEquals(true, spamPage.isInSpam(user1));
+	  Assert.assertEquals(true, spamPage.isInSpam(body2));
   }
   
   

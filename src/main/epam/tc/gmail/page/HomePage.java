@@ -47,7 +47,7 @@ public class HomePage {
 	}
 	
 	
-	public HomePage sendMessage(String user){
+	public HomePage sendMessage(String user, String body){
 		
 		wait(writeMessageButton);
 		writeMessageButton.click();
@@ -56,7 +56,7 @@ public class HomePage {
 		wait(addressee);
 		addressee.sendKeys(user);
 		messageTheme.sendKeys("WWWebdriver try");
-		bodyOfMessage.sendKeys("Hello! Let's be friends!");
+		bodyOfMessage.sendKeys(body);
 		sendButtom.click();
 		LOG.info("Clicking send");
 		

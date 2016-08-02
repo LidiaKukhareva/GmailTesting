@@ -1,5 +1,5 @@
 package main.epam.tc.gmail.account;
 
 public enum AccountAttribute {
-	USER1, USER2, PASSWD1, PASSWD2
+	USER1, USER2, PASSWD1, PASSWD2, BODY1, BODY2
 }
