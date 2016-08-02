@@ -7,7 +7,7 @@ import main.epam.tc.gmail.page.HomePage;
 import main.epam.tc.gmail.page.SpamPage;
 import main.epam.tc.gmail.page.StartPage;
 
-public class GmailTest extends BaseTest{
+public class SpamTest extends BaseTest{
 	
   @Test
   public void spam() {
