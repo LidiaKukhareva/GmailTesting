@@ -11,28 +11,28 @@ public class HomePage extends Page{
 	
 	private final static Logger LOG = LogManager.getRootLogger();	
 	
-	@FindBy(xpath = "//div[contains(text(), 'НАПИСАТЬ')]")
+	@FindBy(xpath = "//div[contains(text(), 'COMPOSE')]")
 	private WebElement writeMessageButton;
 	
-	@FindBy(xpath = "//textarea[@aria-label='Кому']")
+	@FindBy(xpath = "//textarea[@aria-label='To']")
 	private WebElement addressee;
 	
-	@FindBy(xpath = "//input[@placeholder='Тема']")
+	@FindBy(xpath = "//input[@placeholder='Subject']")
 	private WebElement messageTheme;
 	
-	@FindBy(xpath = "//div[contains(text(), 'Отправить')]")
+	@FindBy(xpath = "//div[contains(text(), 'Send')]")
 	private WebElement sendButtom;
 	
-	@FindBy(xpath = "//a[contains(@title, 'Аккаунт Google:')]")
+	@FindBy(xpath = "//a[contains(@title, 'Google Account:')]")
 	private WebElement buttonU;
 	
-	@FindBy(xpath = "//a[contains(text(), 'Выйти')]")
+	@FindBy(xpath = "//a[contains(text(), 'Sign out')]")
 	private WebElement quitButton;
 	
-	@FindBy(xpath = "//a[contains(text(), 'Входящие')]")
+	@FindBy(xpath = "//a[contains(text(), 'Inbox')]")
 	private WebElement incomingMessages;
 	
-	@FindBy(xpath = "//div[@aria-label='Тело письма']")
+	@FindBy(xpath = "//div[@aria-label='Message Body']")
 	private WebElement bodyOfMessage;
 	
 	
