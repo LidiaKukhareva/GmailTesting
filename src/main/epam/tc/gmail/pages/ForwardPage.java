@@ -1,4 +1,4 @@
-package main.epam.tc.gmail.page;
+package main.epam.tc.gmail.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,11 +16,9 @@ public class ForwardPage extends Page{
 	
 	@FindBy(xpath = "//div[contains(text(), 'Settings')]")
 	private WebElement chooseSettingsButton;
-	/**
-	 * variable name starts with upper case letter
-	 */
+	
 	@FindBy(xpath = "//a[contains(text(), POP/IMAP)]")
-	private WebElement ForwardingPOPIMap;
+	private WebElement forwardingPOPIMap;
 	
 	public ForwardPage(WebDriver driver){
 		super(driver);
@@ -40,8 +38,8 @@ public class ForwardPage extends Page{
 		chooseSettingsButton.click();
 		LOG.info("Choose settings");
 		
-		wait(ForwardingPOPIMap);
-		ForwardingPOPIMap.click();
+		wait(forwardingPOPIMap);
+		forwardingPOPIMap.click();
 		LOG.info("Clicking forwarding and POP/IMAP");
 		return this;
 	}

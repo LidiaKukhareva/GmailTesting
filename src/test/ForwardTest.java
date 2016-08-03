@@ -2,19 +2,16 @@ package test;
 
 import org.testng.annotations.Test;
 
-import main.epam.tc.gmail.page.ForwardPage;
-import main.epam.tc.gmail.page.StartPage;
+import main.epam.tc.gmail.pages.ForwardPage;
+import main.epam.tc.gmail.pages.StartPage;
 
 public class ForwardTest extends BaseTest{
 
-	/**
-	 * Please don't use short names if it's possible : forwPage -> forwardPage
-	 */
   @Test
   public void forward() {
 	  StartPage startPage = new StartPage(driver);
-	  startPage.login(user2, passwd2);
-	  ForwardPage forwPage = new ForwardPage(driver);
-	  forwPage.setForward(user1);
+	  startPage.login(USER2, PASSWD2);
+	  ForwardPage forwardPage = new ForwardPage(driver);
+	  forwardPage.setForward(USER1);
   }
 }

@@ -1,4 +1,4 @@
-package main.epam.tc.gmail.page;
+package main.epam.tc.gmail.pages;
 
 import java.util.List;
 
@@ -39,8 +39,7 @@ public class SpamPage extends Page{
 			
 		wait(goToSpam);
 		goToSpam.click();
-		LOG.info("Clicking go to spam!");
-			
+		LOG.info("Clicking go to spam!");	
 		return this;
 	}
 		
@@ -56,8 +55,7 @@ public class SpamPage extends Page{
 			
 		wait(spamFolderButton);
 		spamFolderButton.click();
-		LOG.info("Clicking spam folder");
-			
+		LOG.info("Clicking spam folder");	
 		return this;
 	}
 	

@@ -1,4 +1,4 @@
-package main.epam.tc.gmail.page;
+package main.epam.tc.gmail.pages;
 
 import java.util.List;
 

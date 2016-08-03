@@ -1,4 +1,4 @@
-package main.epam.tc.gmail.page;
+package main.epam.tc.gmail.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -52,7 +52,6 @@ public class HomePage extends Page{
 		bodyOfMessage.sendKeys(body);
 		sendButtom.click();
 		LOG.info("Clicking send");
-
 		return this;
 	}
 	
@@ -61,7 +60,6 @@ public class HomePage extends Page{
 		buttonU.click();
 		quitButton.click();
 		LOG.info("Clicking quit");
-
 		return this;
 	}
 	

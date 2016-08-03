@@ -1,4 +1,4 @@
-package main.epam.tc.gmail.page;
+package main.epam.tc.gmail.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

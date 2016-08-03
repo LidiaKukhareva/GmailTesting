@@ -4,33 +4,34 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-import main.epam.tc.gmail.page.HomePage;
-import main.epam.tc.gmail.page.SpamPage;
-import main.epam.tc.gmail.page.StartPage;
+
+import main.epam.tc.gmail.pages.HomePage;
+import main.epam.tc.gmail.pages.SpamPage;
+import main.epam.tc.gmail.pages.StartPage;
 
 public class SpamTest extends BaseTest{
 	
   @Test
   public void spam() {
 	  StartPage startPage = new StartPage(driver);
-	  startPage.login(user1, passwd1);
+	  startPage.login(USER1, PASSWD1);
 	  
 	  HomePage homePage = new HomePage(driver);
-	  homePage.sendMessage(user2, body1);
+	  homePage.sendMessage(USER2, BODY1);
 	  homePage.quit();
 	  
-	  startPage.login(user2, passwd2);
+	  startPage.login(USER2, PASSWD2);
 	  SpamPage spamPage = new SpamPage(driver);
 	  spamPage.markAsSpam();
 	  homePage.quit();
 	  
-	  startPage.login(user1, passwd1);
-	  homePage.sendMessage(user2, body2);
+	  startPage.login(USER1, PASSWD1);
+	  homePage.sendMessage(USER2, BODY2);
 	  homePage.quit();
 	  
-	  startPage.login(user2, passwd2);
+	  startPage.login(USER2, PASSWD2);
 	  spamPage.goToFolderSpam();
-	  Assert.assertEquals(true, spamPage.isInSpam(body2));
+	  Assert.assertEquals(true, spamPage.isInSpam(BODY2));
   }
   
   
