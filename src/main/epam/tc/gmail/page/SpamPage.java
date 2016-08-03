@@ -13,21 +13,18 @@ import org.openqa.selenium.support.PageFactory;
 public class SpamPage extends Page{
 	
 	private final static Logger LOG = LogManager.getRootLogger();
-
-	/**
-	 * Get rid of russian language in locators
-	 */
 	
-	@FindBy(xpath = "//a[contains(text(), '????')]")
+	@FindBy(xpath = "//a[contains(text(), 'Spam')]")
 	private WebElement spamFolderButton;
 	
-	@FindBy(xpath = "//span[contains(text(), '???')]")
+	@FindBy(xpath = "//span[contains(text(), 'More')]")
 	private WebElement more;
 	
-	@FindBy(xpath = "//div[contains(@aria-label, '???????')]/div/span/div")
+	@FindBy(xpath = "//div[contains(@aria-label, 'Select')]/div/span/div")
 	private WebElement choose;
 	
-	@FindBy(xpath = "//div[@aria-label='? ????!']")
+	@FindBy(xpath = "//div[@aria-label='Report spam']")
+
 	private WebElement goToSpam;
 	
 	public SpamPage(WebDriver driver){
@@ -46,28 +43,11 @@ public class SpamPage extends Page{
 			
 		return this;
 	}
-
-	/**
-	 * Awful.
-	 * Delete Thread.sleep and use WebDriverWait
-	 * @param whatMessage
-	 * @return
-     */
 		
 	public boolean isInSpam(String whatMessage){
 		String path = "//span[contains(text(), '" + whatMessage + "')]";
-		try{
-			Thread.sleep(5000);
-		}
-		catch(IllegalArgumentException | InterruptedException e){
-			LOG.info("Some problems with the thread");
-		}
 		List<WebElement> list = driver.findElements(By.xpath(path));
-		if (list.size() != 0){
-			return true;
-		}
-		else
-			return false;
+		return (list.size() != 0);
 	}
 		
 	public SpamPage goToFolderSpam(){

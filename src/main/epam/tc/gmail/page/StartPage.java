@@ -31,37 +31,29 @@ public class StartPage extends Page{
 	@FindBy(xpath = "//a[contains(text(), 'Add account')]")
 	private List<WebElement> addAccountButton;
 	
+	@FindBy(xpath = "//input[@name='PersistentCookie']")
+	private WebElement staySignedIn;
+	
 	public StartPage(WebDriver driver){
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 
-	/**
-	 * Quite interesting method, never the less i believe that it works
-	 * @param user
-	 * @param passwd
-     * @return
-     */
-
 	
-	public StartPage login(String user, String passwd){
-		
-		if (anotherAccountButton.size() != 0){
-			anotherAccountButton.get(0).click();
-			wait(addAccountButton.get(0));
-			addAccountButton.get(0).click();
-		}
-		else{
-			if (addAccountButton.size() != 0){
-				addAccountButton.get(0).click();
-			}		
-		}
+	public StartPage login(String user, String passwd){	
 		wait(username);
 		username.sendKeys(user);
 		nextButton.submit();
 	
 		wait(password);	
 		password.sendKeys(passwd);
+		
+		wait(staySignedIn);
+		if(staySignedIn.isSelected()){
+			staySignedIn.click();
+		}
+		
+		wait(signInButton);
 		signInButton.submit();
 		LOG.info("Signing in");
 		return this;

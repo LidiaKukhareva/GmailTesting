@@ -40,16 +40,8 @@ public class HomePage extends Page{
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
-
-	/**
-	 * Delete empty spaces in method please
-	 * @param user
-	 * @param body
-     * @return
-     */
 	
 	public HomePage sendMessage(String user, String body){
-
 		wait(writeMessageButton);
 		writeMessageButton.click();
 		LOG.info("Clicking write message");
@@ -65,7 +57,6 @@ public class HomePage extends Page{
 	}
 	
 	public HomePage quit(){
-
 		wait(buttonU);
 		buttonU.click();
 		quitButton.click();
